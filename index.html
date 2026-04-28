@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Web Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Рабочий стол -->
+    <div id="desktop">
+        <!-- Иконки рабочего стола -->
+        <div class="desktop-icon" data-app="pc">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="40" height="28" rx="2" fill="#E0E0E0" stroke="#999" stroke-width="2"/>
+                <rect x="6" y="10" width="36" height="24" fill="#FFF"/>
+                <path d="M14 40H34L38 44H10L14 40Z" fill="#CCC" stroke="#999" stroke-width="2"/>
+            </svg>
+            <span>Этот ПК</span>
+        </div>
+        <div class="desktop-icon" data-app="docs">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 4C10 2.89543 10.8954 2 12 2H30L42 14V44C42 45.1046 41.1046 46 40 46H12C10.8954 46 10 45.1046 10 44V4Z" fill="#FFF" stroke="#999" stroke-width="2"/>
+                <path d="M30 2V14H42" fill="#DDD" stroke="#999" stroke-width="2"/>
+                <line x1="16" y1="24" x2="32" y2="24" stroke="#333" stroke-width="2"/>
+                <line x1="16" y1="32" x2="32" y2="32" stroke="#333" stroke-width="2"/>
+            </svg>
+            <span>Документы</span>
+        </div>
+        <div class="desktop-icon" data-app="trash">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 10H34L32 42C32 43.1046 31.1046 44 30 44H18C16.8954 44 16 43.1046 16 42L14 10Z" fill="#EEE" stroke="#999" stroke-width="2"/>
+                <path d="M10 10H38" stroke="#999" stroke-width="2"/>
+                <path d="M18 10V6C18 4.89543 18.8954 4 20 4H28C29.1046 4 30 4.89543 30 6V10" stroke="#999" stroke-width="2"/>
+                <line x1="20" y1="16" x2="20" y2="38" stroke="#999" stroke-width="2"/>
+                <line x1="24" y1="16" x2="24" y2="38" stroke="#999" stroke-width="2"/>
+                <line x1="28" y1="16" x2="28" y2="38" stroke="#999" stroke-width="2"/>
+            </svg>
+            <span>Корзина</span>
+        </div>
+    </div>
+
+    <!-- Окна (контейнер для динамических окон) -->
+    <div id="window-area"></div>
+
+    <!-- Контекстное меню -->
+    <div id="context-menu" class="hidden">
+        <div class="context-item" id="ctx-refresh">Обновить</div>
+        <div class="context-item" id="ctx-new">Создать</div>
+        <div class="context-divider"></div>
+        <div class="context-item" id="ctx-props">Свойства</div>
+    </div>
+
+    <!-- Центр уведомлений -->
+    <div id="notification-center" class="hidden">
+        <div class="nc-header">
+            <h3>Уведомления</h3>
+            <button id="nc-close">&times;</button>
+        </div>
+        <div class="nc-content">
+            <div class="calendar-widget">
+                <div class="cw-month" id="nc-month"></div>
+                <div class="cw-grid" id="nc-days"></div>
+            </div>
+            <div class="quick-settings">
+                <div class="qs-item">Wi-Fi</div>
+                <div class="qs-item">Bluetooth</div>
+                <div class="qs-item">Режим полета</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Меню Пуск -->
+    <div id="start-menu" class="hidden">
+        <div class="sm-search">
+            <input type="text" placeholder="Поиск приложений, настроек и документов">
+        </div>
+        <div class="sm-pinned">
+            <h4>Закрепленные</h4>
+            <div class="sm-grid">
+                <div class="sm-item"><div class="sm-icon blue"></div><span>Edge</span></div>
+                <div class="sm-item"><div class="sm-icon green"></div><span>Excel</span></div>
+                <div class="sm-item"><div class="sm-icon orange"></div><span>PowerPoint</span></div>
+                <div class="sm-item"><div class="sm-icon red"></div><span>Word</span></div>
+                <div class="sm-item"><div class="sm-icon gray"></div><span>Настройки</span></div>
+                <div class="sm-item"><div class="sm-icon purple"></div><span>Store</span></div>
+            </div>
+        </div>
+        <div class="sm-recommended">
+            <h4>Рекомендации</h4>
+            <div class="sm-list">
+                <div class="sm-file"><span class="sm-ficon doc"></span><span>Отчет за май.docx</span></div>
+                <div class="sm-file"><span class="sm-ficon xls"></span><span>Бюджет 2024.xlsx</span></div>
+            </div>
+        </div>
+        <div class="sm-footer">
+            <div class="sm-user">
+                <div class="sm-avatar"></div>
+                <span>Пользователь</span>
+            </div>
+            <button class="sm-power">⏻</button>
+        </div>
+    </div>
+
+    <!-- Панель задач -->
+    <div id="taskbar">
+        <div class="tb-left">
+            <button id="start-btn" title="Пуск">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 5L11 4V11H3V5Z" fill="#00ADEF"/>
+                    <path d="M13 3.5L21 2V11H13V3.5Z" fill="#00ADEF"/>
+                    <path d="M3 12H11V19L3 18V12Z" fill="#00ADEF"/>
+                    <path d="M13 12H21V21L13 19.5V12Z" fill="#00ADEF"/>
+                </svg>
+            </button>
+            <div class="tb-icons">
+                <!-- Динамические иконки открытых окон -->
+            </div>
+        </div>
+        <div class="tb-right">
+            <div class="tb-tray">
+                <span id="clock-time">00:00</span>
+                <span id="clock-date">01.01.2024</span>
+            </div>
+            <button id="notify-btn" title="Уведомления">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
