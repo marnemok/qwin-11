@@ -1,12 +1,16 @@
 # Qwin 11
 
+Имитация интерфейса Windows 11, созданная Qwen для демонстрации возможностей веб-технологий.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Профессиональный клон интерфейса операционной системы, созданный с использованием современных веб-технологий.
+Интерактивная имитация графического интерфейса, реализованная с использованием современных веб-технологий.
 
 ## 📖 Описание
 
-Qwin 11 — это полнофункциональная имитация рабочего стола, реализованная на HTML, CSS и JavaScript. Проект демонстрирует возможности современных браузеров в создании сложных пользовательских интерфейсов с поддержкой оконного менеджмента, анимаций и интерактивных элементов.
+**Qwin 11** — это интерактивная имитация рабочего стола, созданная Qwen и реализованная на HTML, CSS и JavaScript. Проект демонстрирует возможности современных браузеров в создании сложных пользовательских интерфейсов с поддержкой оконного менеджмента, анимаций и интерактивных элементов.
+
+> ⚠️ **Важно:** Это не операционная система и не клон Windows. Проект создан исключительно в образовательных и демонстрационных целях как имитация интерфейса.
 
 ## ✨ Возможности
 
@@ -50,13 +54,17 @@ MIT License
 
 # Qwin 11
 
+Windows 11 Interface Simulation by Qwen
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Professional interface clone of an operating system built with modern web technologies.
+Interactive interface simulation built with modern web technologies.
 
 ## 📖 Description
 
-Qwin 11 is a fully functional desktop simulation implemented in HTML, CSS, and JavaScript. The project demonstrates the capabilities of modern browsers in creating complex user interfaces with window management, animations, and interactive elements.
+**Qwin 11** is an interactive desktop simulation created by Qwen and implemented in HTML, CSS, and JavaScript. The project demonstrates the capabilities of modern browsers in creating complex user interfaces with window management, animations, and interactive elements.
+
+> ⚠️ **Note:** This is not an operating system and not a Windows clone. The project was created solely for educational and demonstration purposes as an interface simulation.
 
 ## ✨ Features
 
