@@ -1,139 +1,97 @@
-# Windows 11 Web Clone
+# Qwin 11
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Профессиональный клон интерфейса Windows 11 для браузера, реализованный с использованием современных веб-технологий.
+Профессиональный клон интерфейса операционной системы, созданный с использованием современных веб-технологий.
 
-## 📋 Описание
+## 📖 Описание
 
-Этот проект представляет собой функциональную имитацию операционной системы Windows 11, работающую непосредственно в браузере. Интерфейс полностью на русском языке и включает все ключевые элементы оригинальной ОС.
+Qwin 11 — это полнофункциональная имитация рабочего стола, реализованная на HTML, CSS и JavaScript. Проект демонстрирует возможности современных браузеров в создании сложных пользовательских интерфейсов с поддержкой оконного менеджмента, анимаций и интерактивных элементов.
 
-### ✨ Возможности
+## ✨ Возможности
 
-- **Рабочий стол** с иконками приложений (Этот ПК, Документы, Корзина)
+- **Рабочий стол** с иконками приложений
 - **Панель задач** с центрированными кнопками и живыми часами
 - **Меню Пуск** с поиском, закрепленными приложениями и рекомендациями
-- **Система окон** с поддержкой:
-  - Перетаскивания (Drag & Drop)
-  - Изменения размера (Resize)
-  - Сворачивания/разворачивания/закрытия
-  - Управления активным окном (Z-Index)
-- **Центр уведомлений** с календарем и быстрыми настройками
+- **Система окон**: создание, перетаскивание, изменение размера, сворачивание/разворачивание/закрытие
+- **Центр уведомлений** с календарем
 - **Контекстное меню** по правому клику
+- **Активное окно** автоматически выходит на передний план
 
 ## 🚀 Как запустить
 
-### Вариант 1: Простой запуск
-1. Откройте файл `index.html` в любом современном браузере (Chrome, Firefox, Edge, Safari)
-
-### Вариант 2: Локальный сервер (рекомендуется)
-```bash
-# Используя Python
-python -m http.server 8000
-
-# Используя Node.js (требуется установка http-server)
-npx http-server
-
-# Затем откройте в браузере: http://localhost:8000
-```
+1. Клонируйте репозиторий или скачайте файлы проекта
+2. Откройте файл `index.html` в любом современном браузере
+3. Или используйте локальный сервер:
+   ```bash
+   npx http-server .
+   ```
 
 ## 🛠 Стек технологий
 
-- **HTML5** - Семантическая разметка
-- **CSS3** - Современные стили с переменными, Flexbox, Grid, анимации
-- **JavaScript (ES6+)** - Модульная архитектура, стрелочные функции, шаблонные строки
-- **SVG** - Векторная графика для иконок
+- **HTML5** — семантическая разметка
+- **CSS3** — переменные, Flexbox, Grid, анимации, backdrop-filter
+- **JavaScript (ES6+)** — модульная архитектура, стрелочные функции, шаблонные строки
 
-### Ключевые особенности реализации
+## 📁 Структура проекта
 
-- **Fluent Design** - Эффекты стекла (backdrop-filter: blur), скругления 8px, тени
-- **Чистый код** - Без inline-стилей, строгое разделение логики
-- **Валидный HTML/SVG** - Исправлены ошибки с пробелами в атрибутах
-- **Event Delegation** - Корректная обработка закрытия меню
+```
+├── index.html      # Основная разметка
+├── styles.css      # Все стили и анимации
+├── script.js       # Логика приложения
+└── README.md       # Документация
+```
+
+## 📄 Лицензия
+
+MIT License
 
 ---
 
-# Windows 11 Web Clone
+# Qwin 11
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Professional Windows 11 interface clone for browsers, built with modern web technologies.
+Professional interface clone of an operating system built with modern web technologies.
 
-## 📋 Description
+## 📖 Description
 
-This project is a functional imitation of the Windows 11 operating system running directly in the browser. The interface is fully in Russian and includes all key elements of the original OS.
+Qwin 11 is a fully functional desktop simulation implemented in HTML, CSS, and JavaScript. The project demonstrates the capabilities of modern browsers in creating complex user interfaces with window management, animations, and interactive elements.
 
-### ✨ Features
+## ✨ Features
 
-- **Desktop** with application icons (This PC, Documents, Trash)
+- **Desktop** with application icons
 - **Taskbar** with centered buttons and live clock
 - **Start Menu** with search, pinned apps, and recommendations
-- **Window Management System** supporting:
-  - Drag & Drop
-  - Resize
-  - Minimize/Maximize/Close
-  - Active window management (Z-Index)
-- **Notification Center** with calendar and quick settings
+- **Window System**: create, drag & drop, resize, minimize/maximize/close
+- **Notification Center** with calendar
 - **Context Menu** on right-click
+- **Active Window** automatically comes to front
 
 ## 🚀 Usage
 
-### Option 1: Simple Launch
-1. Open the `index.html` file in any modern browser (Chrome, Firefox, Edge, Safari)
-
-### Option 2: Local Server (recommended)
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js (requires http-server installation)
-npx http-server
-
-# Then open in browser: http://localhost:8000
-```
+1. Clone the repository or download project files
+2. Open `index.html` in any modern browser
+3. Or use a local server:
+   ```bash
+   npx http-server .
+   ```
 
 ## 🛠 Tech Stack
 
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styles with variables, Flexbox, Grid, animations
-- **JavaScript (ES6+)** - Modular architecture, arrow functions, template strings
-- **SVG** - Vector graphics for icons
+- **HTML5** — Semantic markup
+- **CSS3** — Variables, Flexbox, Grid, animations, backdrop-filter
+- **JavaScript (ES6+)** — Modular architecture, arrow functions, template literals
 
-### Key Implementation Features
-
-- **Fluent Design** - Glass effects (backdrop-filter: blur), 8px border radius, shadows
-- **Clean Code** - No inline styles, strict logic separation
-- **Valid HTML/SVG** - Fixed attribute spacing errors
-- **Event Delegation** - Proper menu close handling
-
-## 📁 Структура проекта / Project Structure
+## 📁 Project Structure
 
 ```
-├── index.html      # Основная разметка / Main markup
-├── styles.css      # Все стили / All styles
-├── script.js       # Логика приложения / Application logic
-└── README.md       # Документация / Documentation
+├── index.html      # Main markup
+├── styles.css      # All styles and animations
+├── script.js       # Application logic
+└── README.md       # Documentation
 ```
 
-## 🎮 Управление / Controls
+## 📄 License
 
-| Действие / Action | Способ / Method |
-|------------------|-----------------|
-| Открыть окно / Open window | Двойной клик по иконке / Double-click icon |
-| Перетаскивание / Drag | Заголовок окна / Window header |
-| Изменение размера / Resize | Правый нижний угол / Bottom-right corner |
-| Контекстное меню / Context menu | Правый клик / Right-click |
-| Меню Пуск / Start Menu | Кнопка слева / Left button |
-| Уведомления / Notifications | Иконка справа / Right icon |
-
-## 📄 Лицензия / License
-
-MIT License - см. файл LICENSE для деталей / see LICENSE file for details.
-
-## 👨‍💻 Автор / Author
-
-Senior Front-End Developer
-
----
-
-*Проект создан в образовательных целях / Project created for educational purposes*
+MIT License
