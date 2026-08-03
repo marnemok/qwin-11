@@ -91,6 +91,11 @@ body.wallpaper-6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%)
     word-wrap: break-word;
 }
 
+.desktop-icon.selected {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 #window-area {
     position: absolute;
     top: 0;
@@ -159,6 +164,37 @@ body.wallpaper-6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%)
     flex: 1;
     overflow: auto;
     padding: 0;
+}
+
+/* Элементы изменения размера окон */
+.resize-handle {
+    position: absolute;
+    background: transparent;
+    z-index: 10;
+}
+
+.resize-right {
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    cursor: ew-resize;
+}
+
+.resize-bottom {
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    cursor: ns-resize;
+}
+
+.resize-corner {
+    right: 0;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
+    cursor: nwse-resize;
 }
 
 /* Проводник */
@@ -925,6 +961,54 @@ body.wallpaper-6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%)
 
 .hidden {
     display: none !important;
+}
+
+/* Калькулятор */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 10px;
+    height: 100%;
+}
+
+.calc-btn {
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--window-bg);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.calc-btn:hover {
+    background: var(--hover-color);
+}
+
+#calc-display {
+    grid-column: span 4;
+    padding: 15px;
+    font-size: 24px;
+    text-align: right;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--window-bg);
+    color: var(--text-color);
+}
+
+/* Блокнот */
+.notepad-textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    background: var(--window-bg);
+    color: var(--text-color);
 }
 
 /* Скроллбары */
