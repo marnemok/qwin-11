@@ -468,3 +468,17 @@ function addTaskbarIcon(windowId, title) {
 
 // === RUN ===
 document.addEventListener('DOMContentLoaded', init);
+ewFolder = createNewFolder;
+window.openSettingsApp = openSettingsApp;
+window.browserNavigate = browserNavigate;
+window.browserBack = browserBack;
+window.browserForward = browserForward;
+window.browserRefresh = browserRefresh;
+window.toggleBrowserHistory = toggleBrowserHistory;
+window.addBrowserTab = addBrowserTab;
+window.closeBrowserTab = closeBrowserTab;
+window.setWallpaper = setWallpaper;
+window.toggleDarkModeFromSettings = toggleDarkModeFromSettings;
+window.notepadNew = notepadNew;
+window.notepadSave = notepadSave;
+window.notepadOpen = notepadOpen;
