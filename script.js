@@ -1,4 +1,4 @@
-// Windows 11 Web Clone - Main Script
+// Qwin 11 - Complete Rewrite
 
 'use strict';
 
@@ -236,11 +236,11 @@ function showContextMenu(x, y) {
     
     menu.style.left = `${posX}px`;
     menu.style.top = `${posY}px`;
-    menu.classList.remove('hidden');
+    menu.classList.add('visible');
 }
 
 function hideContextMenu() {
-    elements.CONTEXT_MENU.classList.add('hidden');
+    elements.CONTEXT_MENU.classList.remove('visible');
 }
 
 // === DESKTOP ICONS ===
