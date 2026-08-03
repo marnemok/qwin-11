@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qwin 11 OS</title>
+    <title>Qwin 11</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div id="desktop">
+        <!-- Иконки рабочего стола -->
         <div class="desktop-icons">
-            <div class="desktop-icon" data-app="pc">
+            <div class="desktop-icon" data-app="explorer" data-path="root">
                 <i class="fa-solid fa-computer"></i>
                 <span>Этот ПК</span>
             </div>
-            <div class="desktop-icon" data-app="docs">
+            <div class="desktop-icon" data-app="explorer" data-path="documents">
                 <i class="fa-solid fa-folder-open"></i>
                 <span>Документы</span>
             </div>
-            <div class="desktop-icon" data-app="trash">
+            <div class="desktop-icon" data-app="recycle-bin">
                 <i class="fa-solid fa-trash-can"></i>
                 <span>Корзина</span>
             </div>
@@ -28,101 +29,107 @@
             </div>
             <div class="desktop-icon" data-app="settings">
                 <i class="fa-solid fa-gear"></i>
-                <span>Настройки</span>
+                <span>Параметры</span>
             </div>
         </div>
+
+        <!-- Окна приложений -->
         <div id="window-area"></div>
-    </div>
 
-    <div id="taskbar">
-        <div class="taskbar-start">
-            <button id="start-btn"><i class="fa-brands fa-windows"></i></button>
+        <!-- Панель задач -->
+        <div id="taskbar">
+            <div class="taskbar-start">
+                <button id="start-btn"><i class="fa-brands fa-windows"></i></button>
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="widgets-btn"><i class="fa-solid fa-table-columns"></i></button>
+            </div>
+            <div class="taskbar-apps" id="taskbar-apps"></div>
+            <div class="taskbar-tray" id="tray-btn">
+                <div class="tray-icons">
+                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-volume-high"></i>
+                    <i class="fa-solid fa-battery-three-quarters"></i>
+                </div>
+                <div class="tray-clock">
+                    <div id="clock-time">12:00</div>
+                    <div id="clock-date">01.01.2024</div>
+                </div>
+            </div>
         </div>
-        <div class="taskbar-apps" id="taskbar-apps"></div>
-        <div class="taskbar-tray" id="tray-area">
-            <div class="tray-icons">
-                <i class="fa-solid fa-wifi"></i>
-                <i class="fa-solid fa-volume-high"></i>
-                <i class="fa-solid fa-battery-three-quarters"></i>
-            </div>
-            <div class="tray-clock-container" id="tray-clock-btn">
-                <div class="tray-time" id="clock-time">12:00</div>
-                <div class="tray-date" id="clock-date">01.01.2024</div>
-            </div>
-            <div class="tray-notification-btn" id="notification-btn">
-                <i class="fa-regular fa-bell"></i>
-            </div>
-        </div>
-    </div>
 
-    <div id="start-menu" class="hidden">
-        <div class="start-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Поиск приложений, настроек и документов">
-        </div>
-        <div class="start-pinned">
-            <h3>Закрепленные</h3>
-            <div class="pinned-grid">
-                <div class="app-item" data-app="browser"><i class="fa-brands fa-edge"></i><span>Edge</span></div>
-                <div class="app-item" data-app="pc"><i class="fa-solid fa-computer"></i><span>Этот ПК</span></div>
-                <div class="app-item" data-app="docs"><i class="fa-solid fa-folder"></i><span>Документы</span></div>
-                <div class="app-item" data-app="settings"><i class="fa-solid fa-gear"></i><span>Настройки</span></div>
-                <div class="app-item" data-app="trash"><i class="fa-solid fa-trash"></i><span>Корзина</span></div>
-                <div class="app-item" data-app="notepad"><i class="fa-solid fa-note-sticky"></i><span>Блокнот</span></div>
+        <!-- Меню Пуск -->
+        <div id="start-menu" class="hidden">
+            <div class="start-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Поиск приложений, настроек и документов">
+            </div>
+            <div class="start-pinned">
+                <h3>Закрепленные</h3>
+                <div class="pinned-grid">
+                    <div class="app-item" data-app="explorer"><i class="fa-solid fa-folder"></i><span>Проводник</span></div>
+                    <div class="app-item" data-app="browser"><i class="fa-brands fa-edge"></i><span>Браузер</span></div>
+                    <div class="app-item" data-app="settings"><i class="fa-solid fa-gear"></i><span>Параметры</span></div>
+                    <div class="app-item" data-app="notepad"><i class="fa-solid fa-note-sticky"></i><span>Блокнот</span></div>
+                    <div class="app-item" data-app="calculator"><i class="fa-solid fa-calculator"></i><span>Калькулятор</span></div>
+                </div>
+            </div>
+            <div class="start-footer">
+                <div class="user-profile">
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                    <span>Пользователь</span>
+                </div>
+                <button id="power-btn"><i class="fa-solid fa-power-off"></i></button>
             </div>
         </div>
-        <div class="start-recommended">
-            <h3>Рекомендуемые</h3>
-            <div class="recommended-list">
-                <div class="rec-item"><i class="fa-solid fa-file-word"></i><span>Отчет.docx</span></div>
-                <div class="rec-item"><i class="fa-solid fa-image"></i><span>Фото.jpg</span></div>
-            </div>
-        </div>
-        <div class="start-footer">
-            <div class="user-profile">
-                <div class="avatar"><i class="fa-solid fa-user"></i></div>
-                <span>Пользователь</span>
-            </div>
-            <button id="power-btn"><i class="fa-solid fa-power-off"></i></button>
-        </div>
-    </div>
 
-    <div id="notification-center" class="hidden">
-        <div class="quick-settings">
-            <div class="qs-item active" id="wifi-toggle"><i class="fa-solid fa-wifi"></i><span>Wi-Fi</span></div>
-            <div class="qs-item active" id="bt-toggle"><i class="fa-brands fa-bluetooth-b"></i><span>Bluetooth</span></div>
-            <div class="qs-item" id="airplane-toggle"><i class="fa-solid fa-plane"></i><span>В самолете</span></div>
-            <div class="qs-item" id="dark-mode-toggle"><i class="fa-solid fa-moon"></i><span>Тема</span></div>
-        </div>
-        <div class="slider-container">
-            <i class="fa-solid fa-sun"></i>
-            <input type="range" min="0" max="100" value="100">
-            <i class="fa-solid fa-volume-high"></i>
-        </div>
-        <div class="calendar-section">
-            <div class="calendar-header" id="calendar-month-year"></div>
-            <div class="calendar-grid" id="calendar-days"></div>
-        </div>
-        <div class="notifications-list">
-            <h3>Уведомления</h3>
-            <div class="notif-item">
-                <div class="notif-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="notif-content">
-                    <h4>Защитник Windows</h4>
-                    <p>Сканирование завершено. Угроз не найдено.</p>
-                    <span class="notif-time">Сейчас</span>
+        <!-- Центр уведомлений (справа) -->
+        <div id="notification-center" class="hidden">
+            <div class="nc-header">
+                <h2 id="nc-date-title">Понедельник, 1 Января</h2>
+            </div>
+            
+            <div class="quick-settings">
+                <div class="qs-item active" id="qs-wifi"><i class="fa-solid fa-wifi"></i><span>Wi-Fi</span></div>
+                <div class="qs-item active" id="qs-bluetooth"><i class="fa-brands fa-bluetooth-b"></i><span>Bluetooth</span></div>
+                <div class="qs-item" id="qs-theme-toggle"><i class="fa-solid fa-circle-half-stroke"></i><span>Тема</span></div>
+            </div>
+
+            <div class="calendar-container">
+                <div class="cal-header">
+                    <button id="cal-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <span id="cal-month-year">Январь 2024</span>
+                    <button id="cal-next"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="cal-grid">
+                    <div class="cal-day-name">Пн</div>
+                    <div class="cal-day-name">Вт</div>
+                    <div class="cal-day-name">Ср</div>
+                    <div class="cal-day-name">Чт</div>
+                    <div class="cal-day-name">Пт</div>
+                    <div class="cal-day-name">Сб</div>
+                    <div class="cal-day-name">Вс</div>
+                </div>
+            </div>
+
+            <div class="notifications-list">
+                <h3>Уведомления</h3>
+                <div class="notif-item">
+                    <div class="notif-icon"><i class="fa-brands fa-chrome"></i></div>
+                    <div class="notif-content">
+                        <h4>Система</h4>
+                        <p>Добро пожаловать в Qwin 11</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Контекстное меню -->
     <div id="context-menu" class="hidden">
-        <div class="ctx-item" onclick="location.reload()"><i class="fa-solid fa-arrows-rotate"></i> Обновить</div>
+        <div class="ctx-item" id="ctx-refresh"><i class="fa-solid fa-arrows-rotate"></i> Обновить</div>
         <div class="ctx-separator"></div>
-        <div class="ctx-item" onclick="createNewFolder()"><i class="fa-solid fa-folder-plus"></i> Создать папку</div>
-        <div class="ctx-item" onclick="openSettingsApp()"><i class="fa-solid fa-sliders"></i> Персонализация</div>
-        <div class="ctx-separator"></div>
-        <div class="ctx-item" onclick="alert('Qwin 11 v2.0')"><i class="fa-solid fa-circle-info"></i> Свойства</div>
+        <div class="ctx-item" id="ctx-new-folder"><i class="fa-solid fa-folder-plus"></i> Создать папку</div>
+        <div class="ctx-item" id="ctx-personalize"><i class="fa-solid fa-paintbrush"></i> Персонализация</div>
     </div>
 
     <script src="script.js"></script>
