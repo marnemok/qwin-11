@@ -39,9 +39,9 @@
         <!-- Панель задач -->
         <div id="taskbar">
             <div class="taskbar-start">
-                <button id="start-btn"><i class="fa-brands fa-windows"></i></button>
-                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button id="widgets-btn"><i class="fa-solid fa-table-columns"></i></button>
+                <button id="start-btn" title="Пуск"><i class="fa-brands fa-windows"></i></button>
+                <button id="search-btn" title="Поиск"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="widgets-btn" title="Виджеты"><i class="fa-solid fa-table-columns"></i></button>
             </div>
             <div class="taskbar-apps" id="taskbar-apps"></div>
             <div class="taskbar-tray" id="tray-btn">
@@ -61,7 +61,7 @@
         <div id="start-menu" class="hidden">
             <div class="start-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Поиск приложений, настроек и документов">
+                <input type="text" id="start-search-input" placeholder="Поиск приложений, настроек и документов">
             </div>
             <div class="start-pinned">
                 <h3>Закрепленные</h3>
